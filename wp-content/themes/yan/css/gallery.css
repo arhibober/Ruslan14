@@ -1,0 +1,561 @@
+.main{
+
+	height: 100%;
+
+	width: 100%;
+
+}
+
+
+
+/* SLIDER */
+
+#frame{
+
+	position: relative;
+
+	margin-top: 20px;	
+
+	height: 100%;
+
+	width: 100%; 
+
+}
+
+
+
+
+
+#frame ul{
+
+ 	width: 100%; 
+
+
+
+	position: relative;
+
+	list-style: none;
+
+	margin: 0;
+
+	padding: 0;
+
+
+
+ 	margin: 0; 
+
+ 	padding: 0; 
+
+ 	list-style: none;
+
+}
+
+
+
+#frame li{
+
+	position: relative;
+
+	display: block;
+
+	/*margin-right: 10px;*/
+
+	/*margin-bottom: 20px;*/
+
+	/*padding-bottom: 6px;*/
+
+	border-bottom: rgba(0,0,0,0) solid 2px;
+
+
+
+	float: left;
+
+
+
+	-webkit-transform: translate3d(0, 0, 0);
+
+
+
+	transition: border-bottom 0.3s ease-out;
+
+   -moz-transition: border-bottom 0.3s ease-out;
+
+   -webkit-transition: border-bottom 0.3s ease-out;
+
+
+
+}
+
+
+
+#frame li img:hover{
+
+	/*border-bottom: #c60000 solid 2px;*/
+
+	opacity: 0.5;
+
+}
+
+
+
+#frame li.active{
+
+	/*border-bottom: #c60000 solid 2px;*/
+
+}
+
+
+
+@keyframes flash_anim {
+
+  0% {
+
+	opacity: 0.2;
+
+  }
+
+  50% {
+
+	opacity: 0.15;
+
+  }
+
+  100% {
+
+	opacity: 0.1;
+
+  }
+
+}
+
+
+
+@-o-keyframes flash_anim{
+
+  0% {
+
+	opacity: 0.2;
+
+  }
+
+  50% {
+
+	opacity: 0.15;
+
+  }
+
+  100% {
+
+	opacity: 0.1;
+
+  }
+
+
+
+}
+
+
+
+@-moz-keyframes flash_anim{
+
+  0% {
+
+	opacity: 0.2;
+
+  }
+
+  50% {
+
+	opacity: 0.15;
+
+  }
+
+  100% {
+
+	opacity: 0.1;
+
+  }
+
+
+
+}
+
+
+
+@-webkit-keyframes flash_anim{
+
+  0% {
+
+	opacity: 0.2;
+
+  }
+
+  50% {
+
+	opacity: 0.15;
+
+  }
+
+  100% {
+
+	opacity: 0.1;
+
+  }
+
+
+
+}
+
+/*
+
+#frame li:hover .flash{
+
+	position: absolute;
+
+	top:0;
+
+	left:0;
+
+	width: 97%;
+
+	height: 97%;
+
+	background-color: #fff;
+
+	
+
+	opacity: 0.1;
+
+	filter: alpha(opacity=10);
+
+	
+
+	pointer-events: none;
+
+
+
+	-moz-animation-name:flash_anim;
+
+	-o-animation-name:flash_anim;
+
+	-webkit-animation-name:flash_anim;
+
+	animation-name:flash_anim;
+
+
+
+	-moz-animation-duration: 0.3s;
+
+	-o-animation-duration: 0.3s;
+
+	-webkit-animation-duration: 0.3s;
+
+	animation-duration: 0.3s;
+
+
+
+	-moz-animation-timing-function: ease-out;
+
+	-o-animation-timing-function: ease-out;
+
+	-webkit-animation-timing-function: ease-out;
+
+	animation-timing-function: ease-out;
+
+}
+
+*/
+
+
+
+#frame li img{
+
+	position: relative;
+
+	display: block;
+
+	width: 100%;
+
+	height: 100%;
+
+
+
+	-webkit-transform: translate3d(0, 0, 0);
+
+
+
+	transition: opacity 0.3s ease-out;
+
+   -moz-transition: opacity 0.3s ease-out;
+
+   -webkit-transition: opacity 0.3s ease-out;
+
+
+
+	opacity: 1;
+
+
+
+}
+
+
+
+/* BLAZY And stuff */
+
+ .b-lazy {
+
+    opacity: 0;
+
+    filter: alpha(opacity=0);
+
+    /*left: 20px;*/
+
+}
+
+
+
+.b-lazy.b-loaded {
+
+   opacity: 1;
+
+   filter: alpha(opacity=100);
+
+   /*left: 0;*/
+
+}
+
+
+
+/* Hover / active */
+
+.slidee li:hover{
+
+	opacity: 0.8;
+
+	filter: alpha(opacity=80);
+
+}
+
+
+
+.slidee li.active{
+
+	opacity: 1;
+
+	filter: alpha(opacity=1);
+
+}
+
+
+
+/* CONTROLS */
+
+#frameControls{
+
+	position: fixed;
+
+	/*margin-top: 15px;*/
+
+	bottom: 20px;
+
+	left: 20px;
+
+}
+
+#frameControls .arrow-icon{
+
+	position: relative;
+
+	display: inline-block;
+
+	
+
+	width: 48px;
+
+	height: 48px;
+
+	margin-right: 3px;
+
+	
+
+	background-repeat: no-repeat;
+
+	
+
+	opacity: 0.3;
+
+	filter: alpha(opacity=30);
+
+
+
+	cursor: pointer;
+
+}
+
+#frameControls .arrow-icon.disabled,#frameControls .arrow-icon.disabled:hover{
+
+	opacity: 0.15;
+
+	filter: alpha(opacity=15);	
+
+}
+
+
+
+#frameControls .arrow-icon:hover, #frameControls .arrow-icon.flash{
+
+	opacity: 0.6;
+
+	filter: alpha(opacity=60);
+
+}
+
+
+
+#frameControls .arrow-icon.arrow-left{
+
+	background-image: url(../img/arrow-left.png);
+
+}
+
+
+
+#frameControls .arrow-icon.arrow-right{
+
+	background-image: url(../img/arrow-right.png);
+
+}
+
+
+
+
+
+/* Frame */
+
+
+
+/* Scrollbar */
+
+.scrollbar {
+
+	position: absolute;
+
+	top: 10px;
+
+	right: 10px;
+
+	bottom: 10px;
+
+	width: 2px;
+
+	background: #292a33;
+
+}
+
+.scrollbar .handle {
+
+	width: 100%;
+
+	height: 100px;
+
+	background: #999999;
+
+	cursor: pointer;
+
+}
+
+
+
+.scrollbar .handle:hover,.scrollbar .handle.dragged{
+
+	background: #ccc;
+
+}
+
+
+
+.scrollbar .handle .mousearea {
+
+	position: absolute;
+
+	top: 0;
+
+	left: -10px;
+
+	width: 22px;
+
+	height: 100%;
+
+}
+
+
+
+/* OVERLAY */
+
+
+
+#overlay{
+
+	position: absolute;
+
+}
+
+
+
+#mouse{
+
+	cursor: none;
+
+	width: 50px;
+
+	height: 50px;
+
+	background: url("../img/arrow-left-mouse.png") no-repeat center;
+
+	position: absolute;
+
+	display:none;
+
+	top: 0;
+
+	left: 0;
+
+	z-index: 10000;	
+
+}
+
+
+
+
+
+/* INFO */
+
+
+
+#info{
+
+	/*display: none;*/
+
+	position: fixed;
+
+	left: 20px;
+
+	bottom: 15px;
+
+}
+
+
+
+#info .show_thumbs{
+
+	cursor: pointer;
+
+}
+
+
+
+#info .show_thumbs:hover{
+
+	color: #C00000;
+
+}
